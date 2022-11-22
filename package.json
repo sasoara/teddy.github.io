@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "ng build --base-href=https://teddy-macht-lalala.sasoara.com",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
