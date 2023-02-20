@@ -20,6 +20,13 @@ p {
   margin: 0;
 }
 
+pre {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  color: white;
+  padding: 0 1rem 1rem;
+  margin: 0;
+}
+
 span {
   font-weight: bold;
   text-transform: uppercase;
@@ -107,13 +114,6 @@ svg {
   img {
     margin: 0 16px;
   }
-
-  pre {
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-    color: white;
-    padding: 0 1rem 1rem;
-    margin: 0;
-  }
 }
 
 .content {
@@ -192,8 +192,6 @@ svg {
             height: 50px !important;
             margin: 0;
             padding: 4px;
-            /*border: none;
-            background-color: transparent;*/
             box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
             transform: translateY(-3px);
             fill: rgb(0, 0, 0);
@@ -230,7 +228,15 @@ svg {
     padding: 5px;
     width: 80%;
 
+    thead tr th:first-child, tbody tr td:first-child {
+      padding-left: 10px;
+    }
+
     thead {
+      tr {
+        height: 31px;
+      }
+
       tr:first-child, th:first-child {
         border-radius: 10px 0 0 0;
       }
@@ -267,6 +273,16 @@ svg {
           color: #eee;
         }
 
+        &:last-child {
+          td:first-child {
+            border-radius: 0 0 0 10px;
+          }
+
+          td:last-child {
+            border-radius: 0 0 10px 0;
+          }
+        }
+
         td {
           padding: 5px;
           border: 1px ridge #fff;
@@ -288,13 +304,6 @@ footer {
   overflow: hidden;
   background-color: #0f0f10ff;
   font-weight: 600;
-
-  pre {
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-    color: white;
-    padding: 0 1rem 1rem;
-    margin: 0;
-  }
 }
 
 /* ----------- 4k ----------- */
@@ -400,17 +409,24 @@ footer {
       }
     }
   }
-  footer {
-    font-size: smaller;
-  }
 }
 
 /* ----------- Mobile L ----------- */
 @media screen and (max-width: 425px) {
-
+  #header-text {
+    font-size: small;
+  }
+  #footer-text {
+    font-size: 11.5px;
+  }
 }
 
 /* ----------- Mobile S ----------- */
-@media screen and (max-width: 320px) {
-
+@media screen and (max-width: 340px) {
+  #header-text {
+    font-size: smaller;
+  }
+  #footer-text {
+    font-size: xx-small;
+  }
 }
