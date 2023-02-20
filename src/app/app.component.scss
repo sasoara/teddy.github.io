@@ -20,6 +20,13 @@ p {
   margin: 0;
 }
 
+pre {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  color: white;
+  padding: 0 1rem 1rem;
+  margin: 0;
+}
+
 span {
   font-weight: bold;
   text-transform: uppercase;
@@ -106,13 +113,6 @@ svg {
 
   img {
     margin: 0 16px;
-  }
-
-  pre {
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-    color: white;
-    padding: 0 1rem 1rem;
-    margin: 0;
   }
 }
 
@@ -304,13 +304,6 @@ footer {
   overflow: hidden;
   background-color: #0f0f10ff;
   font-weight: 600;
-
-  pre {
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-    color: white;
-    padding: 0 1rem 1rem;
-    margin: 0;
-  }
 }
 
 /* ----------- 4k ----------- */
@@ -416,17 +409,24 @@ footer {
       }
     }
   }
-  footer {
-    font-size: smaller;
-  }
 }
 
 /* ----------- Mobile L ----------- */
 @media screen and (max-width: 425px) {
-
+  #header-text {
+    font-size: small;
+  }
+  #footer-text {
+    font-size: 11.5px;
+  }
 }
 
 /* ----------- Mobile S ----------- */
-@media screen and (max-width: 320px) {
-
+@media screen and (max-width: 340px) {
+  #header-text {
+    font-size: smaller;
+  }
+  #footer-text {
+    font-size: xx-small;
+  }
 }
