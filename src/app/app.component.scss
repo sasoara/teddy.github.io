@@ -25,6 +25,13 @@ span {
   text-transform: uppercase;
 }
 
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
 svg {
   &#clouds {
     position: fixed;
@@ -35,10 +42,35 @@ svg {
   }
 
   &#shuffle {
-    margin-top: 31px;
+    margin-top: 15px;
+    @keyframes color-shuffle {
+      0% {
+        fill: #ff5082;
+      }
+      20% {
+        fill: #f8c2c2;
+      }
+      40% {
+        fill: #aae5c8;
+      }
+      60% {
+        fill: #c8c3e1;
+      }
+      80% {
+        fill: #ffe773;
+      }
+      100% {
+        fill: #d3dce2;
+      }
+    }
 
     .shadow {
-      fill: #FF5082;
+      fill: #ff5082;
+
+      &:hover {
+        animation-name: color-shuffle;
+        animation-duration: 2s;
+      }
     }
   }
 }
@@ -51,7 +83,7 @@ svg {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #0F0F10FF;
+  background-color: #0f0f10ff;
   color: white;
   font-weight: 600;
   border-radius: 0 0 15px 15px;
@@ -63,8 +95,8 @@ svg {
     top: 0;
     left: 0;
     height: 4px;
-    background: #3A3A3AFF;
-    color: #C2C3C4;
+    background: #3a3a3aff;
+    color: #c2c3c4;
     width: 100%;
     font-size: 2rem;
     line-height: 0;
@@ -120,32 +152,32 @@ svg {
         fill: #888;
 
         &:hover {
-          box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 4px 17px #00000059;
           transform: translateY(-3px);
-          fill: rgb(105, 103, 103);
+          fill: #696767FF;
         }
 
-        button.ovary:hover {
+        button#ovary:hover {
           border-color: #ff5082;
         }
 
-        button.penis:hover {
+        button#penis:hover {
           border-color: #f8c2c2;
         }
 
-        button.dress:hover {
+        button#dress:hover {
           border-color: #aae5c8;
         }
 
-        button.tie:hover {
+        button#tie:hover {
           border-color: #c8c3e1;
         }
 
-        button.taxi:hover {
+        button#taxi:hover {
           border-color: #ffe773;
         }
 
-        button.rocket:hover {
+        button#rocket:hover {
           border-color: #d3dce5;
         }
 
@@ -182,6 +214,7 @@ svg {
           display: block;
           overflow-y: scroll;
           resize: both;
+          min-width: 160px;
           min-height: 40px;
           line-height: 20px;
         }
@@ -190,10 +223,10 @@ svg {
   }
 
   table {
-    border: 1px ridge #C0C0C0;
+    border: 1px ridge #c0c0c0;
     border-collapse: collapse;
     border-radius: 6px 6px 0 0;
-    margin-top: 15px;
+    margin: 15px 0 16px 0;
     padding: 5px;
     width: 80%;
 
@@ -206,15 +239,15 @@ svg {
         border-radius: 0 10px 0 0;
       }
 
-      background: #3A3A3A;
-      color: #FFFFFF;
+      background: #3a3a3a;
+      color: #fff;
       border: hidden;
       font-weight: bold;
       text-transform: uppercase;
 
       th {
         padding: 5px;
-        border: 1px ridge #FFFFFF;
+        border: 1px ridge #fff;
         text-align: left;
       }
     }
@@ -225,18 +258,18 @@ svg {
       tr {
         &:nth-of-type(odd) {
           /* Zebra striping */
-          background: #EEEEEE;
+          background: #eee;
         }
 
         &:nth-of-type(even) {
           /* Zebra striping */
-          background: #3A3A3A;
-          color: #EEEEEE;
+          background: #3a3a3a;
+          color: #eee;
         }
 
         td {
           padding: 5px;
-          border: 1px ridge #FFFFFF;
+          border: 1px ridge #fff;
           text-align: left;
         }
       }
@@ -253,7 +286,7 @@ footer {
   padding-top: 16px;
   margin-top: 8px;
   overflow: hidden;
-  background-color: rgb(15, 15, 16);
+  background-color: #0f0f10ff;
   font-weight: 600;
 
   pre {
@@ -266,7 +299,7 @@ footer {
 
 /* ----------- 4k ----------- */
 @media screen and (min-width: 1440px) {
-  .validate-input {
+  .validate-input, svg#shuffle {
     cursor: pointer;
   }
 
@@ -274,7 +307,7 @@ footer {
 
 /* ----------- Laptop L ----------- */
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
-  .validate-input {
+  .validate-input, svg#shuffle {
     cursor: pointer;
   }
 
@@ -317,7 +350,7 @@ footer {
     tr {
       margin: 0 0 1rem 0;
       border-radius: 4px;
-      border: 1px solid #EEEEEE;
+      border: 1px solid #eee;
 
       &:nth-child(odd) {
         background: #ccc;
