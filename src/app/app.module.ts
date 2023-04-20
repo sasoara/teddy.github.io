@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { CardContainerComponent } from "./card-container/card-container.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CardContainerComponent} from "./card-container/card-container.component";
 
 @NgModule({
   declarations: [
@@ -21,4 +21,5 @@ import { CardContainerComponent } from "./card-container/card-container.componen
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
