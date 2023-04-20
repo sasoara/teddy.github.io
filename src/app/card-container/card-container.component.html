@@ -1,0 +1,32 @@
+<form [formGroup]="cardContainerForm">
+  Value: {{ cardContainerForm.value | json }}
+
+  <!-- <div class="card-container" formArrayName="women">
+    <ng-container
+      *ngFor="let woman of womenList().controls; let i = index">
+      <div [formGroupName]="i">
+        <span>Woman</span>
+        <a class="card" title="Ovary">
+          <button (click)="addWoman()" class="validate-input" id="ovary" type="button">
+            <img alt="Ovary" class="icon"
+                 src="https://img.icons8.com/external-victoruler-linear-colour-victoruler/200/external-ovary-internal-human-organs-victoruler-linear-colour-victoruler.png">
+          </button>
+          <textarea formControlName="woman" placeholder="Sarah or Francesca"></textarea>
+        </a>
+      </div>
+    </ng-container>
+  </div> -->
+
+  <div class="card-container" formArrayName="women">
+    <span>Woman</span>
+    <a class="card" title="Ovary">
+      <button (click)="addWoman()" class="validate-input" id="ovary" type="button">
+        <img alt="Ovary" class="icon"
+             src="https://img.icons8.com/external-victoruler-linear-colour-victoruler/200/external-ovary-internal-human-organs-victoruler-linear-colour-victoruler.png">
+      </button>
+      <textarea formControlName="woman" placeholder="Sarah or Francesca"></textarea>
+      <!-- <button (click)="addFormGroupToWomenList(women)"></button> -->
+    </a>
+  </div>
+
+</form>

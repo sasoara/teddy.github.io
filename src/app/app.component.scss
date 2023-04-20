@@ -27,18 +27,18 @@ pre {
   margin: 0;
 }
 
-span {
+/*span {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 2px;
-}
+}*/
 
-button {
+/*button {
   margin: 0;
   padding: 0;
   border: none;
   background-color: transparent;
-}
+}*/
 
 svg {
   &#clouds {
@@ -130,7 +130,7 @@ svg {
     flex-wrap: wrap;
     justify-content: center;
 
-    .card-container {
+    /*.card-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -208,7 +208,7 @@ svg {
 
         textarea {
           margin-left: 10px;
-          max-width: 400px; /*muss responsive sein*/
+          max-width: 400px; !*muss responsive sein*!
           max-height: 100px;
           display: block;
           overflow-y: scroll;
@@ -218,7 +218,7 @@ svg {
           line-height: 20px;
         }
       }
-    }
+    }*/
   }
 
   table {
