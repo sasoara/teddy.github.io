@@ -6,11 +6,13 @@ import {AppComponent} from './app.component';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CardContainerComponent} from "./card-container/card-container.component";
+import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardContainerComponent
+    CardContainerComponent,
+    DynamicTableComponent
   ],
   imports: [
     BrowserModule,
