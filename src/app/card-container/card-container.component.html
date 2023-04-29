@@ -1,0 +1,69 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="cardContainerForm">
+
+  <div class="card-container">
+    <span>Woman</span>
+    <a class="card" title="Ovary">
+      <button (click)="addWoman()" class="validate-input" id="ovary" type="submit">
+        <img alt="Ovary" class="icon"
+             src="https://img.icons8.com/external-victoruler-linear-colour-victoruler/200/external-ovary-internal-human-organs-victoruler-linear-colour-victoruler.png">
+      </button>
+      <textarea formControlName="woman" placeholder="Sarah or Francesca"></textarea>
+    </a>
+  </div>
+
+  <div class="card-container">
+    <span>Men</span>
+    <a class="card" title="Penis">
+      <button (click)="addMan()" class="validate-input" id="penis" type="submit">
+        <img alt="Penis" class="icon"
+             src="https://img.icons8.com/external-color-line-collection-vinzence-studio/200/external-penis-erotic-stuff-color-line-collection-vinzence-studio.png">
+      </button>
+      <textarea formControlName="man" placeholder="Tom or Jared"></textarea>
+    </a>
+  </div>
+
+  <div class="card-container">
+    <span>Dress Woman</span>
+    <a class="card" title="Dress">
+      <button (click)="addDressW()" class="validate-input" id="dress" type="submit">
+        <img alt="Dress" id="icon"
+             src="https://img.icons8.com/external-photo3ideastudio-lineal-color-photo3ideastudio/200/external-dress-clothes-photo3ideastudio-lineal-color-photo3ideastudio.png">
+      </button>
+      <textarea formControlName="dressW" placeholder="Carpet or Wedding dress"></textarea>
+    </a>
+  </div>
+
+  <div class="card-container">
+    <span>Dress Men</span>
+    <a class="card" title="Tie">
+      <button (click)="addDressM()" class="validate-input" id="tie" type="submit">
+        <img alt="Tie" class="icon"
+             src="https://img.icons8.com/cotton/200/tie.png">
+      </button>
+      <textarea formControlName="dressM" placeholder="Street bum or Groom"></textarea>
+    </a>
+  </div>
+
+  <div class="card-container">
+    <span>Transport</span>
+    <a class="card" title="Taxi">
+      <button (click)="addTransport()" class="validate-input" id="taxi" type="submit">
+        <img alt="Taxi" class="icon"
+             src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/200/external-taxi-vacation-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png">
+      </button>
+      <textarea formControlName="transport" placeholder="Taxi or SBB 1. Class"></textarea>
+    </a>
+  </div>
+
+  <div class="card-container">
+    <span>Activity</span>
+    <a class="card" title="Rocket">
+      <button (click)="addActivity()" class="validate-input" id="rocket" type="submit">
+        <img alt="Rocket" class="icon"
+             src="https://img.icons8.com/external-filled-line-andi-nur-abdillah/200/external-Rocket-space-(filled-line)-filled-line-andi-nur-abdillah.png">
+      </button>
+      <textarea formControlName="activity" placeholder="Make a fire on the Rhine or having sex"></textarea>
+    </a>
+  </div>
+
+</form>
