@@ -28,7 +28,7 @@ export class CardContainerComponent implements OnInit {
   constructor(private fb: FormBuilder) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.segmentIds.women.pop();
     this.segmentIds.men.pop();
     this.segmentIds.dressesW.pop();
@@ -38,108 +38,92 @@ export class CardContainerComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log(this.cardContainerForm.value);
     console.log(this.segmentIds);
+    this.cardContainerForm.reset();
   }
 
-  // WOMAN
   get woman() {
     return this.cardContainerForm.get('woman');
+  }
+
+  get man() {
+    return this.cardContainerForm.get('man');
+  }
+
+  get dressW() {
+    return this.cardContainerForm.get('dressW');
+  }
+
+  get dressM() {
+    return this.cardContainerForm.get('dressM');
+  }
+
+  get transport() {
+    return this.cardContainerForm.get('transport');
+  }
+
+  get activity() {
+    return this.cardContainerForm.get('activity');
   }
 
   newWoman(): string {
     return this.cardContainerForm.value.woman!;
   }
 
-  addWoman() {
-    if (this.woman?.valid) {
-      this.segmentIds.women.push(this.newWoman());
-    }
-    console.log(this.cardContainerForm.value);
-    this.cardContainerForm.reset();
-  }
-
-  // MAN
-  get man() {
-    return this.cardContainerForm.get('man');
-  }
-
   newMan(): string {
     return this.cardContainerForm.value.man!;
-  }
-
-  addMan() {
-    if (this.man?.valid) {
-      this.segmentIds.men.push(this.newMan());
-    }
-    console.log(this.cardContainerForm.value);
-    this.cardContainerForm.reset();
-  }
-
-  // DRESSW
-  get dressW() {
-    return this.cardContainerForm.get('dressW');
   }
 
   newDressW(): string {
     return this.cardContainerForm.value.dressW!;
   }
 
-  addDressW() {
-    if (this.dressW?.valid) {
-      this.segmentIds.dressesW.push(this.newDressW());
-    }
-    console.log(this.cardContainerForm.value);
-    this.cardContainerForm.reset();
-  }
-
-  // DRESSM
-  get dressM() {
-    return this.cardContainerForm.get('dressM');
-  }
-
   newDressM(): string {
     return this.cardContainerForm.value.dressM!;
-  }
-
-  addDressM() {
-    if (this.dressM?.valid) {
-      this.segmentIds.dressesM.push(this.newDressM());
-    }
-    console.log(this.cardContainerForm.value);
-    this.cardContainerForm.reset();
-  }
-
-  // TRANSPORT
-  get transport() {
-    return this.cardContainerForm.get('transport');
   }
 
   newTransport(): string {
     return this.cardContainerForm.value.transport!;
   }
 
-  addTransport() {
-    if (this.transport?.valid) {
-      this.segmentIds.transports.push(this.newTransport());
-    }
-    console.log(this.cardContainerForm.value);
-    this.cardContainerForm.reset();
-  }
-
-  // ACTIVITY
-  get activity() {
-    return this.cardContainerForm.get('activity');
-  }
-
   newActivity(): string {
     return this.cardContainerForm.value.activity!;
   }
 
-  addActivity() {
+  addWoman(): void {
+    if (this.woman?.valid) {
+      this.segmentIds.women.push(this.newWoman());
+    }
+  }
+
+  addMan(): void {
+    if (this.man?.valid) {
+      this.segmentIds.men.push(this.newMan());
+    }
+  }
+
+  addDressW(): void {
+    if (this.dressW?.valid) {
+      this.segmentIds.dressesW.push(this.newDressW());
+    }
+  }
+
+  addDressM(): void {
+    if (this.dressM?.valid) {
+      this.segmentIds.dressesM.push(this.newDressM());
+    }
+  }
+
+  addTransport(): void {
+    if (this.transport?.valid) {
+      this.segmentIds.transports.push(this.newTransport());
+    }
+  }
+
+  addActivity(): void {
     if (this.activity?.valid) {
       this.segmentIds.activities.push(this.newActivity());
     }
-    console.log(this.cardContainerForm.value);
-    this.cardContainerForm.reset();
   }
 }
