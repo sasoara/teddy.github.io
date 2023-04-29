@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'card-container',
@@ -7,80 +7,47 @@ import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
   styleUrls: ['./card-container.component.scss']
 })
 export class CardContainerComponent implements OnInit {
-  segmentIds: any[] = [];
-  cardContainerForm: FormGroup | any;
+  segmentIds = {
+    women: [''],
+    men: [''],
+    dressesW: [''],
+    dressesM: [''],
+    transports: [''],
+    activities: ['']
+  };
+
+  cardContainerForm = this.fb.group({
+    woman: ['', Validators.required],
+    man: ['', Validators.required],
+    dressW: ['', Validators.required],
+    dressM: ['', Validators.required],
+    transport: ['', Validators.required],
+    activity: ['', Validators.required]
+  });
 
   constructor(private fb: FormBuilder) {
   }
 
   ngOnInit() {
-    this._createForm({
-      segmentIds: [],
-      women: [{
-        woman: []
-      }]
-    })
+    this.segmentIds.women.pop();
+    this.segmentIds.men.pop();
+    this.segmentIds.dressesW.pop();
+    this.segmentIds.dressesM.pop();
+    this.segmentIds.transports.pop();
+    this.segmentIds.activities.pop();
   }
 
-  /*private _createForm(card?: ICard): void {
-    // @ts-ignore
-    console.log('_createForm ~ card', card.women);
-    this.segmentIds = card?.segmentIds ?? [];
-    const women = card?.women ?? [];
-
-    this.cardContainerForm = this.fb.group({
-      women: this.fb.array(
-        women.map((x) =>
-          this.fb.group({
-            woman: [x.womaaan]
-          }))
-      )
-    })
-  }*/
-
-  womenList(): FormArray {
-    // @ts-ignore
-    return this.cardContainerForm.get('women') as FormArray;
+  onSubmit(): void {
+    console.log(this.segmentIds);
   }
 
-  addFormGroupToWomenList(women: { woman: [] }[]) {
-    // @ts-ignore
-    for (let woman of women) {
-      this.womenList().push(
-        this.fb.group({
-          woman: [woman.woman]
-        })
-      );
-    }
-    console.log(this.womenList().controls[0]);
-  }
-
-  newWoman(): FormGroup {
-    return this.fb.group({
-      woman: ''
-    });
+  newWoman(): string {
+    return this.cardContainerForm.value.woman!;
   }
 
   addWoman() {
-    this.womenList().push(this.newWoman());
+    this.segmentIds.women.push(this.newWoman());
+    console.log(this.cardContainerForm.value);
+    this.cardContainerForm.reset();
   }
-
-  private _createForm(card?: ICard): void {
-    // @ts-ignore
-    console.log('_createForm ~ card', card.women);
-    this.segmentIds = card?.segmentIds ?? [];
-    const women = card?.women ?? [];
-
-    this.cardContainerForm = this.fb.group({
-      women: this.fb.array([])
-    });
-    this.addFormGroupToWomenList(women);
-  }
-
 }
-
-export interface ICard {
-  segmentIds: any[];
-  women: { woman: [] }[];
-}
-
