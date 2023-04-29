@@ -27,18 +27,10 @@ pre {
   margin: 0;
 }
 
-/*span {
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}*/
-
-/*button {
-  margin: 0;
-  padding: 0;
+button {
   border: none;
   background-color: transparent;
-}*/
+}
 
 svg {
   &#clouds {
@@ -123,103 +115,6 @@ svg {
   padding: 0 16px;
   flex-direction: column;
   align-items: center;
-
-  .wrap-card {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    /*.card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 15px;
-      inline-size: min-content;
-
-      .card {
-        all: unset;
-        border-radius: 4px;
-        border: 1px solid #eee;
-        background-color: #fafafa;
-        margin: 0 8px 16px;
-        padding: 16px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.2s ease-in-out;
-        line-height: 24px;
-        fill: #888;
-
-        &:hover {
-          box-shadow: 0 4px 17px #00000059;
-          transform: translateY(-3px);
-          fill: #696767FF;
-        }
-
-        button#ovary:hover {
-          border-color: #ff5082;
-        }
-
-        button#penis:hover {
-          border-color: #f8c2c2;
-        }
-
-        button#dress:hover {
-          border-color: #aae5c8;
-        }
-
-        button#tie:hover {
-          border-color: #c8c3e1;
-        }
-
-        button#taxi:hover {
-          border-color: #ffe773;
-        }
-
-        button#rocket:hover {
-          border-color: #d3dce5;
-        }
-
-        .validate-input {
-          margin: 0;
-          padding: 0;
-          border: none;
-          background-color: transparent;
-
-          &:hover {
-            width: 50px !important;
-            height: 50px !important;
-            margin: 0;
-            padding: 4px;
-            box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-            transform: translateY(-3px);
-            fill: rgb(0, 0, 0);
-            border: 4px solid rgba(105, 103, 103, 0.35);
-            border-radius: 20px;
-
-            img {
-              width: 35px !important;
-              height: 35px !important;
-            }
-          }
-        }
-
-        textarea {
-          margin-left: 10px;
-          max-width: 400px; !*muss responsive sein*!
-          max-height: 100px;
-          display: block;
-          overflow-y: scroll;
-          resize: both;
-          min-width: 160px;
-          min-height: 40px;
-          line-height: 20px;
-        }
-      }
-    }*/
-  }
 
   table {
     border: 1px ridge #c0c0c0;
