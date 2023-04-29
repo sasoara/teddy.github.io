@@ -17,12 +17,12 @@ export class CardContainerComponent implements OnInit {
   };
 
   cardContainerForm = this.fb.group({
-    woman: ['', Validators.required],
-    man: ['', Validators.required],
-    dressW: ['', Validators.required],
-    dressM: ['', Validators.required],
-    transport: ['', Validators.required],
-    activity: ['', Validators.required]
+    woman: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern('[a-zA-Z ]*')]],
+    man: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern('[a-zA-Z ]*')]],
+    dressW: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+    dressM: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+    transport: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+    activity: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]
   });
 
   constructor(private fb: FormBuilder) {
@@ -41,12 +41,18 @@ export class CardContainerComponent implements OnInit {
     console.log(this.segmentIds);
   }
 
+  get woman() {
+    return this.cardContainerForm.get('woman');
+  }
+
   newWoman(): string {
     return this.cardContainerForm.value.woman!;
   }
 
   addWoman() {
-    this.segmentIds.women.push(this.newWoman());
+    if (this.woman?.valid) {
+      this.segmentIds.women.push(this.newWoman());
+    }
     console.log(this.cardContainerForm.value);
     this.cardContainerForm.reset();
   }
