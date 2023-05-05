@@ -1,0 +1,12 @@
+<table class="table" role="table">
+  <thead role="rowgroup">
+  <tr role="row">
+    <th *ngFor="let header of tableData.headers" role="columnheader">{{ header.key }}</th>
+  </tr>
+  </thead>
+  <tbody role="rowgroup">
+  <tr *ngFor="let row of tableData.data" role="row">
+    <td *ngFor="let header of tableData.headers" role="cell">{{ row[header.key] | titlecase }}</td>
+  </tr>
+  <tbody>
+</table>
