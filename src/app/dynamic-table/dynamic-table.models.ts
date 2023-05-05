@@ -10,10 +10,10 @@ export interface IDynamicTable {
 }
 
 export interface ITableData {
-  woman: string;
-  man: string;
-  dressW: string;
-  dressM: string;
-  transport: string;
-  activity: string;
+  "WOMAN": string;
+  "MAN": string;
+  "DRESS WOMAN": string;
+  "DRESS MAN": string;
+  "TRANSPORT": string;
+  "ACTIVITY": string;
 }
