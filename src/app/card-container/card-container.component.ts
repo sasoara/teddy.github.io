@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {DynamicTableService} from "../dynamic-table/dynamic-table.service";
+import {CardContainerService} from "./card-container.service";
 
 @Component({
   selector: 'card-container',
@@ -8,14 +9,7 @@ import {DynamicTableService} from "../dynamic-table/dynamic-table.service";
   styleUrls: ['./card-container.component.scss']
 })
 export class CardContainerComponent implements OnInit {
-  segmentIds = {
-    women: [''],
-    men: [''],
-    dressesW: [''],
-    dressesM: [''],
-    transports: [''],
-    activities: ['']
-  };
+  cardData = this._cardContainerService.getCardData();
 
   cardContainerForm = this.fb.group({
     woman: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern('[a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ ]*')]],
@@ -27,37 +21,13 @@ export class CardContainerComponent implements OnInit {
   });
 
   clearedPlaceholder: boolean = false;
-  submittedValue: string = '';
-  submittedSegment: number = 0;
+  submittedCardValue: string = '';
+  submittedCardSegment: number = 0;
 
-  constructor(private fb: FormBuilder, private _dynamicTableService: DynamicTableService) {
-  }
-
-  ngOnInit(): void {
-    this.segmentIds.women.pop();
-    this.segmentIds.men.pop();
-    this.segmentIds.dressesW.pop();
-    this.segmentIds.dressesM.pop();
-    this.segmentIds.transports.pop();
-    this.segmentIds.activities.pop();
-  }
-
-  onSubmit(): void {
-    console.log('FORM', this.cardContainerForm.value);
-    console.log('SEGMENTIDS', this.segmentIds);
-    console.log('submittedValue', this.submittedValue);
-    console.log('submittedSegment', this.submittedSegment);
-    if (!this.clearedPlaceholder) {
-      this._dynamicTableService.getTableData().pop();
-      this._dynamicTableService.getTableData().pop();
-      this._dynamicTableService.insertTableDataItem(this._dynamicTableService.getTableData());
-      this.clearedPlaceholder = true;
-    }
-
-    this._dynamicTableService.addData(this.submittedValue, this.submittedSegment);
-    this.cardContainerForm.reset();
-
-    console.log('TABLE', this._dynamicTableService.getTableData());
+  constructor(
+    private fb: FormBuilder,
+    private _cardContainerService: CardContainerService,
+    private _dynamicTableService: DynamicTableService) {
   }
 
   get woman() {
@@ -82,6 +52,33 @@ export class CardContainerComponent implements OnInit {
 
   get activity() {
     return this.cardContainerForm.get('activity');
+  }
+
+  ngOnInit(): void {
+    this.cardData.women.pop();
+    this.cardData.men.pop();
+    this.cardData.dressesW.pop();
+    this.cardData.dressesM.pop();
+    this.cardData.transports.pop();
+    this.cardData.activities.pop();
+  }
+
+  onSubmit(): void {
+    console.log('FORM', this.cardContainerForm.value);
+    console.log('CARDDATA', this.cardData);
+    console.log('SUBMITTEDCARDVALUE', this.submittedCardValue);
+    console.log('SUBMITTEDCARDSEGMENT', this.submittedCardSegment);
+    if (!this.clearedPlaceholder) {
+      this._dynamicTableService.getTableData().pop();
+      this._dynamicTableService.getTableData().pop();
+      this._dynamicTableService.insertTableDataItem(this._dynamicTableService.getTableData());
+      this.clearedPlaceholder = true;
+    }
+
+    this._dynamicTableService.addData(this.submittedCardValue, this.submittedCardSegment);
+    this.cardContainerForm.reset();
+
+    console.log('TABLE', this._dynamicTableService.getTableData());
   }
 
   newWoman(): string {
@@ -110,50 +107,50 @@ export class CardContainerComponent implements OnInit {
 
   addWoman(): void {
     if (this.woman?.valid) {
-      this.submittedValue = this.newWoman();
-      this.submittedSegment = 1;
-      this.segmentIds.women.push(this.newWoman());
+      this.submittedCardValue = this.newWoman();
+      this.submittedCardSegment = 1;
+      this.cardData.women.push(this.newWoman());
 
     }
   }
 
   addMan(): void {
     if (this.man?.valid) {
-      this.submittedValue = this.newMan();
-      this.submittedSegment = 2;
-      this.segmentIds.men.push(this.newMan());
+      this.submittedCardValue = this.newMan();
+      this.submittedCardSegment = 2;
+      this.cardData.men.push(this.newMan());
     }
   }
 
   addDressW(): void {
     if (this.dressW?.valid) {
-      this.submittedValue = this.newDressW();
-      this.submittedSegment = 3;
-      this.segmentIds.dressesW.push(this.newDressW());
+      this.submittedCardValue = this.newDressW();
+      this.submittedCardSegment = 3;
+      this.cardData.dressesW.push(this.newDressW());
     }
   }
 
   addDressM(): void {
     if (this.dressM?.valid) {
-      this.submittedValue = this.newDressM();
-      this.submittedSegment = 4;
-      this.segmentIds.dressesM.push(this.newDressM());
+      this.submittedCardValue = this.newDressM();
+      this.submittedCardSegment = 4;
+      this.cardData.dressesM.push(this.newDressM());
     }
   }
 
   addTransport(): void {
     if (this.transport?.valid) {
-      this.submittedValue = this.newTransport();
-      this.submittedSegment = 5;
-      this.segmentIds.transports.push(this.newTransport());
+      this.submittedCardValue = this.newTransport();
+      this.submittedCardSegment = 5;
+      this.cardData.transports.push(this.newTransport());
     }
   }
 
   addActivity(): void {
     if (this.activity?.valid) {
-      this.submittedValue = this.newActivity();
-      this.submittedSegment = 6;
-      this.segmentIds.activities.push(this.newActivity());
+      this.submittedCardValue = this.newActivity();
+      this.submittedCardSegment = 6;
+      this.cardData.activities.push(this.newActivity());
     }
   }
 }
