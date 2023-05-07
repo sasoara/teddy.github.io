@@ -12,12 +12,12 @@ export class CardContainerComponent implements OnInit {
   cardData = this._cardContainerService.getCardData();
 
   cardContainerForm = this.fb.group({
-    woman: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern('[a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ ]*')]],
-    man: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern('[a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ ]*')]],
-    dressW: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-    dressM: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-    transport: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-    activity: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]
+    woman: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern('^(?![\\s])[a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
+    man: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern('^(?![\\s])[a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
+    dressW: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
+    dressM: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
+    transport: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
+    activity: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]]
   });
 
   clearedPlaceholder: boolean = false;
