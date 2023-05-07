@@ -7,12 +7,14 @@ import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CardContainerComponent} from "./card-container/card-container.component";
 import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
+import { ShufflingCubeComponent } from './shuffling-cube/shuffling-cube.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardContainerComponent,
-    DynamicTableComponent
+    DynamicTableComponent,
+    ShufflingCubeComponent
   ],
   imports: [
     BrowserModule,

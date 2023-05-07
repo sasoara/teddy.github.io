@@ -118,6 +118,10 @@ export class DynamicTableService {
     return this._tableData;
   }
 
+  setTableData(tableData: ITableData[]): void {
+    this._tableData = tableData;
+  }
+
   insertTableDataItem(tableData: ITableData[]) {
     tableData.push(this.tableDataItem);
   }

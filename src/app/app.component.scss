@@ -27,11 +27,6 @@ pre {
   margin: 0;
 }
 
-button {
-  border: none;
-  background-color: transparent;
-}
-
 svg {
   &#clouds {
     position: fixed;
@@ -39,39 +34,6 @@ svg {
     left: -230px;
     z-index: -10;
     width: 1920px;
-  }
-
-  &#shuffle {
-    margin-top: 15px;
-    @keyframes color-shuffle {
-      0% {
-        fill: #ff5082;
-      }
-      20% {
-        fill: #f8c2c2;
-      }
-      40% {
-        fill: #aae5c8;
-      }
-      60% {
-        fill: #c8c3e1;
-      }
-      80% {
-        fill: #ffe773;
-      }
-      100% {
-        fill: #d3dce2;
-      }
-    }
-
-    .shadow {
-      fill: #ff5082;
-
-      &:hover {
-        animation-name: color-shuffle;
-        animation-duration: 2s;
-      }
-    }
   }
 }
 
@@ -137,17 +99,11 @@ footer {
 
 /* ----------- 4k ----------- */
 @media screen and (min-width: 1440px) {
-  .validate-input, svg#shuffle {
-    cursor: pointer;
-  }
 
 }
 
 /* ----------- Laptop L ----------- */
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
-  .validate-input, svg#shuffle {
-    cursor: pointer;
-  }
 
 }
 
