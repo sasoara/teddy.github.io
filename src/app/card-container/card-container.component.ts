@@ -74,10 +74,10 @@ export class CardContainerComponent implements OnInit {
       this._dynamicTableService.insertTableDataItem(this._dynamicTableService.getTableData());
       this.clearedPlaceholder = true;
     }
-
     this._dynamicTableService.addData(this.submittedCardValue, this.submittedCardSegment);
     this.cardContainerForm.reset();
-
+    this.submittedCardValue = '';
+    this.submittedCardSegment = 0;
     console.log('TABLE', this._dynamicTableService.getTableData());
   }
 
@@ -109,8 +109,7 @@ export class CardContainerComponent implements OnInit {
     if (this.woman?.valid) {
       this.submittedCardValue = this.newWoman();
       this.submittedCardSegment = 1;
-      this.cardData.women.push(this.newWoman());
-
+      this.cardData.women.push(this.submittedCardValue);
     }
   }
 
@@ -118,7 +117,7 @@ export class CardContainerComponent implements OnInit {
     if (this.man?.valid) {
       this.submittedCardValue = this.newMan();
       this.submittedCardSegment = 2;
-      this.cardData.men.push(this.newMan());
+      this.cardData.men.push(this.submittedCardValue);
     }
   }
 
@@ -126,7 +125,7 @@ export class CardContainerComponent implements OnInit {
     if (this.dressW?.valid) {
       this.submittedCardValue = this.newDressW();
       this.submittedCardSegment = 3;
-      this.cardData.dressesW.push(this.newDressW());
+      this.cardData.dressesW.push(this.submittedCardValue);
     }
   }
 
@@ -134,7 +133,7 @@ export class CardContainerComponent implements OnInit {
     if (this.dressM?.valid) {
       this.submittedCardValue = this.newDressM();
       this.submittedCardSegment = 4;
-      this.cardData.dressesM.push(this.newDressM());
+      this.cardData.dressesM.push(this.submittedCardValue);
     }
   }
 
@@ -142,7 +141,7 @@ export class CardContainerComponent implements OnInit {
     if (this.transport?.valid) {
       this.submittedCardValue = this.newTransport();
       this.submittedCardSegment = 5;
-      this.cardData.transports.push(this.newTransport());
+      this.cardData.transports.push(this.submittedCardValue);
     }
   }
 
@@ -150,7 +149,7 @@ export class CardContainerComponent implements OnInit {
     if (this.activity?.valid) {
       this.submittedCardValue = this.newActivity();
       this.submittedCardSegment = 6;
-      this.cardData.activities.push(this.newActivity());
+      this.cardData.activities.push(this.submittedCardValue);
     }
   }
 }
