@@ -120,6 +120,23 @@ form {
   }
 }
 
+.error-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .error-msg {
+    margin: 15px 0;
+    text-align: center;
+    background-color: crimson;
+    border: 3px solid #eee;
+    border-radius: 4px;
+    padding: 10px 15px;
+    color: #fafafa;
+    font-weight: 700;
+  }
+}
+
 /* ----------- 4k ----------- */
 @media screen and (min-width: 1440px) {
   .validate-input {
@@ -131,5 +148,38 @@ form {
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .validate-input {
     cursor: pointer;
+  }
+}
+
+/* ----------- Tablet ----------- */
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .error-container {
+    padding: 0 20%;
+
+    .error-msg {
+      font-size: smaller;
+    }
+  }
+}
+
+/* ----------- Mobile L ----------- */
+@media screen and (max-width: 425px) {
+  .error-container {
+    padding: 0 20%;
+
+    .error-msg {
+      font-size: smaller;
+    }
+  }
+}
+
+/* ----------- Mobile S ----------- */
+@media screen and (max-width: 340px) {
+  .error-container {
+    padding: 0 20%;
+
+    .error-msg {
+      font-size: smaller;
+    }
   }
 }

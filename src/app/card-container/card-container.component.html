@@ -67,3 +67,8 @@
   </div>
 
 </form>
+
+<div *ngIf="invalidValue" class="error-container">
+  <div
+    class="error-msg">{{ 'Please do not add spaces at the beginning or end. Enter at least 2 characters.' | uppercase }}</div>
+</div>
