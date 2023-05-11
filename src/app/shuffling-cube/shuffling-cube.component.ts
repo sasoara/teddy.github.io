@@ -59,7 +59,7 @@ export class ShufflingCubeComponent {
   shuffleTableData(): void {
     if (this.isTableFull()) {
       this.shuffleEachStringArray(this.cardData);
-      this.tableData = this.convertCardDataToTableData(this.cardData, this.tableData);
+      this._dynamicTableService.setTableData(this.convertCardDataToTableData(this.cardData, this.tableData));
       console.log('this.tableData', this.tableData);
     }
   }

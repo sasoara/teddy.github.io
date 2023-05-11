@@ -14,13 +14,14 @@ export class CardContainerComponent implements OnInit {
   cardContainerForm = this.fb.group({
     woman: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern('^(?![\\s])[a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
     man: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern('^(?![\\s])[a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
-    dressW: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
-    dressM: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
-    transport: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
-    activity: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]]
+    dressW: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
+    dressM: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
+    transport: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]],
+    activity: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100), Validators.pattern('^(?![\\s])[0-9a-zA-ZÄäÖöÜüÈèÉéËëÀàÇçßñÏïŸÿÕõ][\\s]*.*$(?<![\\s])')]]
   });
 
   clearedPlaceholder: boolean = false;
+  invalidValue: boolean = false;
   submittedCardValue: string = '';
   submittedCardSegment: number = 0;
 
@@ -107,49 +108,67 @@ export class CardContainerComponent implements OnInit {
 
   addWoman(): void {
     if (this.woman?.valid) {
+      this.invalidValue = false;
       this.submittedCardValue = this.newWoman();
       this.submittedCardSegment = 1;
       this.cardData.women.push(this.submittedCardValue);
+    } else if (this.woman?.invalid) {
+      this.invalidValue = true;
     }
   }
 
   addMan(): void {
     if (this.man?.valid) {
+      this.invalidValue = false;
       this.submittedCardValue = this.newMan();
       this.submittedCardSegment = 2;
       this.cardData.men.push(this.submittedCardValue);
+    } else if (this.man?.invalid) {
+      this.invalidValue = true;
     }
   }
 
   addDressW(): void {
     if (this.dressW?.valid) {
+      this.invalidValue = false;
       this.submittedCardValue = this.newDressW();
       this.submittedCardSegment = 3;
       this.cardData.dressesW.push(this.submittedCardValue);
+    } else if (this.dressW?.invalid) {
+      this.invalidValue = true;
     }
   }
 
   addDressM(): void {
     if (this.dressM?.valid) {
+      this.invalidValue = false;
       this.submittedCardValue = this.newDressM();
       this.submittedCardSegment = 4;
       this.cardData.dressesM.push(this.submittedCardValue);
+    } else if (this.dressM?.invalid) {
+      this.invalidValue = true;
     }
   }
 
   addTransport(): void {
     if (this.transport?.valid) {
+      this.invalidValue = false;
       this.submittedCardValue = this.newTransport();
       this.submittedCardSegment = 5;
       this.cardData.transports.push(this.submittedCardValue);
+    } else if (this.transport?.invalid) {
+      this.invalidValue = true;
     }
   }
 
   addActivity(): void {
     if (this.activity?.valid) {
+      this.invalidValue = false;
       this.submittedCardValue = this.newActivity();
       this.submittedCardSegment = 6;
       this.cardData.activities.push(this.submittedCardValue);
+    } else if (this.activity?.invalid) {
+      this.invalidValue = true;
     }
   }
 }
