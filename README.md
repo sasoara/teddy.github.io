@@ -1,9 +1,9 @@
 # teddy-macht-lalala
 Francesca &amp; Sarah's Teddy Game - produced with 🧸 Passion and ❤️ Love
 
-<img alt="Project online / wide screen" src="https://github.com/sasoara/teddy.github.io/assets/51110137/32867ac6-0997-4ea7-bd40-a1a54528f277" height="250" />
-<img alt="Project online / tablet" src="https://github.com/sasoara/teddy.github.io/assets/51110137/f42f8442-f0dc-429d-a579-07991cf8a0f8" height="250" />
-<img alt="Project online / smartphone" src="https://github.com/sasoara/teddy.github.io/assets/51110137/20d3e68f-64c0-4750-8fe8-1d5f04ef42c3" height="250" />
+<img alt="Project online / wide screen" src="https://github.com/sasoara/teddy.github.io/assets/51110137/32867ac6-0997-4ea7-bd40-a1a54528f277" height="240" />
+<img alt="Project online / tablet" src="https://github.com/sasoara/teddy.github.io/assets/51110137/f42f8442-f0dc-429d-a579-07991cf8a0f8" height="240" />
+<img alt="Project online / smartphone" src="https://github.com/sasoara/teddy.github.io/assets/51110137/20d3e68f-64c0-4750-8fe8-1d5f04ef42c3" height="240" />
 
 ## Teddy (generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6)
 
