@@ -14,17 +14,17 @@ export class DynamicTableService {
     this._tableData = [{
       "WOMAN": 'Sarah',
       "MAN": 'Tom',
-      "DRESS WOMAN": 'Vorhang',
-      "DRESS MAN": 'Strassenpenner',
+      "DRESS WOMAN": 'Carpet',
+      "DRESS MAN": 'Groom',
       "TRANSPORT": 'Taxi',
-      "ACTIVITY": 'Am Rhein ein Feuer zünden'
+      "ACTIVITY": 'Meet Harald Glööckler'
     }, {
       "WOMAN": 'Francesca',
       "MAN": 'Jared',
-      "DRESS WOMAN": 'Brautkleid',
-      "DRESS MAN": 'Bräutigam',
-      "TRANSPORT": 'SBB 1. Klasse',
-      "ACTIVITY": 'Konzert von Rammstein'
+      "DRESS WOMAN": 'Wedding dress',
+      "DRESS MAN": 'Street bum',
+      "TRANSPORT": 'SBB 1. class',
+      "ACTIVITY": 'Do nothing'
     }];
     this.tableDataItem = {"WOMAN": '', "MAN": '', "DRESS WOMAN": '', "DRESS MAN": '', "TRANSPORT": '', "ACTIVITY": ''}
   }
